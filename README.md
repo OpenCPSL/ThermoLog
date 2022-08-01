@@ -25,9 +25,21 @@ Configuration is stored in two files:
 
 ### config.json
 
-"broker": "192.168.1.20",                     IP Address of MQTT Broker.
-"port": 1883,                                 Port of MQTT Broker.
-"deltaT": 1.0,                                Minimum temperature difference before publishing to MQTT Broker.
-"sensorTempTopic": "zigbee2mqtt/ThermoLog",   MQTT Topic to Publish values to.
-"logToFile": true                             Optionally, log data to file.
+| Setting | Details |
+|---|---|
+|"broker": "127.0.0.1",|                        IP Address of MQTT Broker.|
+|"port": 1883,|                                 Port of MQTT Broker.|
+|"sensorTempTopic": "zigbee2mqtt/ThermoLog",|   MQTT Topic to Publish values to.|
+|"deltaT": 1.0,|                                Minimum temperature difference before publishing to MQTT Broker.|
+|"logToFile": true |                            Optionally, log data to file.|
+
+### sensors.json
+
+Each sensor is given a name, and the associated sensor ID for that sensor.
+
+For example, a sensor named `TempA` is associated with its sensor ID as follows:
+
+`"TempA":"28-xxxxxxxxxxxx"`
+
+Where `28-xxxxxxxxxxxx` is replaced with the specific sensor ID for the 1-wire sensor in use.
 
